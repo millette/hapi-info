@@ -94,7 +94,7 @@ describe('routes', () => {
             server.inject('/hapi-info', (res) => {
 
                 const result = internals.makeResult(server);
-                expect(res.result).to.deep.equal(result);
+                expect(res.result).to.equal(result);
                 done(err);
             });
         });
@@ -131,7 +131,7 @@ describe('routes', () => {
             server.inject('/foo', (res) => {
 
                 const result = internals.makeResult(server);
-                expect(res.result).to.deep.equal(result);
+                expect(res.result).to.equal(result);
                 done(err);
             });
         });
@@ -143,7 +143,7 @@ describe('routes', () => {
 
             const info = server.plugins['hapi-info'].info();
             const result = internals.makeResult(server);
-            expect(info).to.deep.equal(result);
+            expect(info).to.equal(result);
             done(err);
         });
     });
@@ -157,7 +157,7 @@ describe('routes', () => {
                 expect(res.statusCode).to.equal(404);
                 const info = server.plugins['hapi-info'].info();
                 const result = internals.makeResult(server);
-                expect(info).to.deep.equal(result);
+                expect(info).to.equal(result);
                 done(err);
             });
         });
@@ -169,7 +169,7 @@ describe('routes', () => {
 
             const info = server.plugins['hapi-info'].info();
             const result = internals.makeFilteredResult(server);
-            expect(info).to.deep.equal(result);
+            expect(info).to.equal(result);
             done(err);
         });
     });
@@ -180,7 +180,7 @@ describe('routes', () => {
 
             const info = server.plugins['hapi-info'].info();
             const result = internals.makeResult(server);
-            expect(info).to.deep.equal(result);
+            expect(info).to.equal(result);
             done(err);
         });
     });
